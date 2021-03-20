@@ -2,6 +2,7 @@ package com.example.testndk;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 
 public class Cocos2dxGLSurfaceView extends GLSurfaceView {
     public Cocos2dxGLSurfaceView(Context context) {

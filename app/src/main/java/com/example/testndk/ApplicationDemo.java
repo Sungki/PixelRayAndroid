@@ -2,12 +2,14 @@ package com.example.testndk;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.util.Log;
 
 public class ApplicationDemo extends Cocos2dxActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
         mGLView = new Cocos2dxGLSurfaceView(this);
+        setContentView(mGLView);
     }
 
     @Override
@@ -23,4 +25,8 @@ public class ApplicationDemo extends Cocos2dxActivity {
     }
 
     private GLSurfaceView mGLView;
+
+    static {
+        System.loadLibrary("native-lib");
+    }
 }

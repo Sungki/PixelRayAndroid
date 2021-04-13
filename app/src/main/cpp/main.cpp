@@ -1,7 +1,8 @@
 #include "SDL.h"
+#include "Game.h"
 
 int SDL_main(int argc, char* argv[]) {
-    SDL_Window *window;                    // Declare a pointer
+/*    SDL_Window *window;                    // Declare a pointer
 
     SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
 
@@ -63,6 +64,11 @@ int SDL_main(int argc, char* argv[]) {
     SDL_DestroyWindow(window);
 
     // Clean up
-    SDL_Quit();
+    SDL_Quit();*/
+
+
+    Game game;
+    game.OnExecute();
+
     return 0;
 }

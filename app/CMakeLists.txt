@@ -7,14 +7,11 @@ include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../libs/SDL2/src
 )
 
-#set(PIXELRAY_ANDROID true) # This confirms that we are using is::Engine to develop on Android
 set(PIXELRAY_SRC_DIR   "${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp")
 set(PIXELRAY_CMAKE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src/main/cmake")
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../libs/SDL2/ ${CMAKE_CURRENT_SOURCE_DIR}/../libs/SDL2)
 
-#include_directories(${FIREBASE_INCLUDE_DIR})
-#link_directories("${FIREBASE_LIBRARY_DIR}${ANDROID_ABI}/c++/")
 include(${PIXELRAY_CMAKE_DIR}/pixelray.cmake)
 #include(${PIXELRAY_CMAKE_DIR}/app_src.cmake)
 

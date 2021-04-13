@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TestNDK</string>
+    <string name="app_name">SDL2 Example</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="launch_sdl2">Launch SDL2</string>
 </resources>

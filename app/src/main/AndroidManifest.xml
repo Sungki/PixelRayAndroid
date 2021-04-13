@@ -8,11 +8,6 @@
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         <activity
             android:name=".SDLActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name">
-        </activity>
-        <activity
-            android:name="com.example.testndk.MainActivity"
             android:label="TestNDK"
             android:configChanges="orientation">
             <intent-filter>

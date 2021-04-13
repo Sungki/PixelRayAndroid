@@ -28,7 +28,7 @@ int SDL_main(int argc, char* argv[]) {
     renderer =  SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED);
 
     // Set render color to red ( background will be rendered in this color )
-    SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );
+    SDL_SetRenderDrawColor( renderer, 50, 50, 150, 255 );
 
     // Clear winow
     SDL_RenderClear( renderer );
@@ -37,16 +37,18 @@ int SDL_main(int argc, char* argv[]) {
 
     // Creat a rect at pos ( 50, 50 ) that's 50 pixels wide and 50 pixels high.
     SDL_Rect r;
-    r.x = 50;
-    r.y = 50;
-    r.w = 500;
-    r.h = 500;
 
     // Set render color to blue ( rect will be rendered in this color )
-    SDL_SetRenderDrawColor( renderer, 0, 0, 255, 255 );
+//    SDL_SetRenderDrawColor( renderer, 0, 0, 255, 255 );
 
     // Render image
-    SDL_Surface *loadedImage = SDL_LoadBMP("res/test.bmp");
+    SDL_Surface *loadedImage = SDL_LoadBMP("test.bmp");
+
+    r.x = 10;
+    r.y = 10;
+    r.w = loadedImage->w;
+    r.h = loadedImage->h;
+
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, loadedImage);
     SDL_FreeSurface(loadedImage);
 

@@ -1,0 +1,11 @@
+//
+// Created by youby on 4/13/2021.
+//
+
+#ifndef TESTNDK_SCREENDIMENSIONS_H
+#define TESTNDK_SCREENDIMENSIONS_H
+
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
+
+#endif //TESTNDK_SCREENDIMENSIONS_H

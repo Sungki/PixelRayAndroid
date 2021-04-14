@@ -1,7 +1,8 @@
 #include "Game.h"
+#include "ScreenDimensions.h"
 
-const int SCREEN_WIDTH = 1024;
-const int SCREEN_HEIGHT = 768;
+int SCREEN_WIDTH;
+int SCREEN_HEIGHT;
 
 Game::Game() {
     window = NULL;
@@ -40,12 +41,18 @@ bool Game::OnInit() {
     }
     else {
         //Set texture filtering to linear
-        if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0"))
-        {
-            printf("Warning: Linear texture filtering not enabled!");
-        }
+//        if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0"))
+//        {
+//            printf("Warning: Linear texture filtering not enabled!");
+//        }
 
-        window = SDL_CreateWindow("PixelRay", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        SDL_DisplayMode mode;
+        SDL_GetDisplayMode(0,0,&mode);
+        SCREEN_WIDTH = mode.w;
+        SCREEN_HEIGHT = mode.h;
+
+        window = SDL_CreateWindow("PixelRay", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                                  SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN | SDL_WINDOW_RESIZABLE);
 
         if (window == NULL) {
             printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
@@ -62,7 +69,7 @@ bool Game::OnInit() {
             else
             {
                 //Initialize renderer color
-                SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0xFF);
 
                 //Initialize PNG loading
 //                int imgFlags = IMG_INIT_PNG;

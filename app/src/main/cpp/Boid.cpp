@@ -1,7 +1,5 @@
 #include "Boid.h"
-
-const int SCREEN_WIDTH = 1024;
-const int SCREEN_HEIGHT = 768;
+#include "ScreenDimensions.h"
 
 Boid::Boid(double x, double y, double angle, SDL_Renderer* renderer) : angle(angle), radius(2.0), maxSpeed(2), maxForce(0.03), renderer(renderer), loader()
 {
